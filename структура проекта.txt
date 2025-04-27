@@ -1,0 +1,36 @@
+project/
+├── frontend/                     # Frontend-ресурсы
+│   ├── static/                    # Статические ресурсы (CSS, JS, изображения)
+│   │   ├── css/
+│   │   │   └── styles.css         # Таблицы стилей
+│   │   ├── js/
+│   │   │   └── script.js          # Логика поведения интерфейса
+│   │   └── images/
+│   │       └── logo.png           # Лого проекта
+│   ├── templates/                 # HTML-шаблоны
+│   │   ├── base.html              # Общий шаблон
+│   │   ├── login.html             # Вход
+│   │   ├── register.html          # Регистрация
+│   │   ├── dashboard.html         # Панель пользователя
+│   │   ├── create_trip.html       # Создание поездки
+│   │   ├── view_trips.html        # Просмотр поездок
+│   │   ├── edit_profile.html      # Редактирование профиля
+│   │   └── about.html             # О проекте
+│   └── favicon.ico                # Фавикон
+├── backend/                       # Backend-часть
+│   ├── api.py                     # Точка входа API
+│   ├── auth.py                    # Авторизация и работа с токенами
+│   ├── config.py                  # Конфигурация
+│   ├── database.py                # Подключение к базе данных
+│   ├── models.py                  # ORM-модели
+│   ├── schemas.py                 # Pydantic-схемы
+│   ├── services.py                # Бизнес-логика
+│   ├── utils.py                   # Вспомогательные функции
+│   └── tests/                     # Каталог тестов
+├── bot.py                         # Telegram-бот
+├── db.py                          # Прямая работа с базой данных (опционально)
+├── .env                           # Переменные окружения
+├── Dockerfile                     # Docker-инструкция (опционально)
+├── docker-compose.yml             # Docker-композиция (опционально)
+├── requirements.txt               # Зависимости проекта
+└── README.md                      # Руководство по проекту
