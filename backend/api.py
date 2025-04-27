@@ -27,9 +27,38 @@ app.mount("/static", StaticFiles(directory="frontend/static"), name="static")
 # Рендеринг шаблонов
 templates = Jinja2Templates(directory="frontend/templates")
 
-@app.get("/", response_class=HTMLResponse)
+@app.get("/base", response_class=HTMLResponse)
 async def home_page(request: Request):
     return templates.TemplateResponse("base.html", {"request": request})
+
+@app.get("/login", response_class=HTMLResponse)
+async def login_page(request: Request):
+    return templates.TemplateResponse("login.html", {"request": request})
+
+@app.get("/register", response_class=HTMLResponse)
+async def register_page(request: Request):
+    return templates.TemplateResponse("register.html", {"request": request})
+
+@app.get("/about", response_class=HTMLResponse)
+async def login_page(request: Request):
+    return templates.TemplateResponse("about.html", {"request": request})
+
+@app.get("/create_trip", response_class=HTMLResponse)
+async def register_page(request: Request):
+    return templates.TemplateResponse("create_trip.html", {"request": request})
+
+@app.get("/dashboard", response_class=HTMLResponse)
+async def login_page(request: Request):
+    return templates.TemplateResponse("dashboard.html", {"request": request})
+
+@app.get("/edit_profile", response_class=HTMLResponse)
+async def register_page(request: Request):
+    return templates.TemplateResponse("edit_profile.html", {"request": request})
+
+@app.get("/view_trips", response_class=HTMLResponse)
+async def login_page(request: Request):
+    return templates.TemplateResponse("view_trips.html", {"request": request})
+
 
 # Роут для регистрации пользователя
 @app.post("/users/", response_model=UserCreate)
