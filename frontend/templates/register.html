@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Регистрация</h2>
+<form action="/register" method="post">
+    <label for="username">Имя пользователя:</label>
+    <input type="text" id="username" name="username" required>
+    <label for="email">Электронная почта:</label>
+    <input type="email" id="email" name="email" required>
+    <label for="password">Пароль:</label>
+    <input type="password" id="password" name="password" required>
+    <button type="submit">Зарегистрироваться</button>
+    <span>Уже есть аккаунт?</span> <a href="/login">Войдите</a>
+</form>
+<div id="error-message"></div>
+{% endblock %}
