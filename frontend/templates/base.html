@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Транспортный сервис</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header class="header">
+        <h1>Транспортный сервис</h1>
+    </header>
+    <nav class="navbar">
+        <ul>
+            <li><a href="/">Главная</a></li>
+            <li><a href="/dashboard">Кабинет</a></li>
+            <li><a href="/create-trip">Создать поездку</a></li>
+            <li><a href="/view-trips">Мои поездки</a></li>
+            <li><a href="/edit-profile">Профиль</a></li>
+            <li><a href="#" id="logout-link">Выйти</a></li>
+        </ul>
+    </nav>
+    <div class="content">
+        {% block content %}{% endblock %}
+    </div>
+    <footer class="footer">
+        © 2025 Транспортный сервис
+    </footer>
+</body>
+</html>
