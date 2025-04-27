@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Добро пожаловать, {{ current_user.username }}!</h2>
+<p>Вы вошли в личный кабинет.</p>
+<ul>
+    <li><a href="/create-trip">Создать новую поездку</a></li>
+    <li><a href="/view-trips">Просмотреть существующие поездки</a></li>
+    <li><a href="/edit-profile">Изменить личные данные</a></li>
+</ul>
+{% endblock %}
