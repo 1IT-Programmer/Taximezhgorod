@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Мои поездки</h2>
+<table>
+    <tr>
+        <th>№</th>
+        <th>Начальная точка</th>
+        <th>Конечная точка</th>
+        <th>Расстояние (км)</th>
+        <th>Стоимость ($)</th>
+    </tr>
+    {% for trip in trips %}
+    <tr>
+        <td>{{ loop.index }}</td>
+        <td>{{ trip.departure_point }}</td>
+        <td>{{ trip.destination_point }}</td>
+        <td>{{ trip.distance }}</td>
+        <td>{{ trip.cost }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
