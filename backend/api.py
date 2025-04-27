@@ -1,4 +1,7 @@
 from fastapi import FastAPI, Depends, HTTPException
+from fastapi.templating import Jinja2Templates
+from fastapi.staticfiles import StaticFiles
+from pathlib import Path
 from sqlalchemy.orm import Session
 from .database import SessionLocal, engine
 from .models import User, Trip
@@ -17,6 +20,16 @@ def get_db():
         yield db
     finally:
         db.close()
+
+# Настройка статических ресурсов
+app.mount("/static", StaticFiles(directory="frontend/static"), name="static")
+
+# Рендеринг шаблонов
+templates = Jinja2Templates(directory="frontend/templates")
+
+@app.get("/", response_class=HTMLResponse)
+async def home_page(request: Request):
+    return templates.TemplateResponse("base.html", {"request": request})
 
 # Роут для регистрации пользователя
 @app.post("/users/", response_model=UserCreate)
